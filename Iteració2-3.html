@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Iteració 3</title>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="partida"></div>
+  <div id="marcador"></div>
+  <button id="enviar" class="hidden">Enviar Resultats</button>
+
+  <script type="module">
+    import dades from './data.js';
+
+    let estatDeLaPartida = {
+      contadorPreguntes: 0,
+      respostesUsuari: []
+    };
+
+    function renderitzarPregunta() {
+      let pregunta = dades.preguntes[estatDeLaPartida.contadorPreguntes];
+
+      let html = `
+        <h2>${pregunta.pregunta}</h2>
+        ${pregunta.respostes.map(r => `
+          <button onclick="respondre(${r.id})">${r.etiqueta}</button>
+        `).join("")}
+      `;
+
+      document.getElementById("partida").innerHTML = html;
+    }
+
+    function respondre(idResposta) {
+      estatDeLaPartida.respostesUsuari.push(idResposta);
+      estatDeLaPartida.contadorPreguntes++;
+
+      renderitzarMarcador();
+
+      if (estatDeLaPartida.contadorPreguntes < dades.preguntes.length) {
+        renderitzarPregunta();
+      } else {
+        document.getElementById("partida").innerHTML = "<h2>Has acabat!</h2>";
+        document.getElementById("enviar").classList.remove("hidden");
+      }
+    }
+
+    function renderitzarMarcador() {
+      let total = dades.preguntes.length;
+      let respostes = estatDeLaPartida.contadorPreguntes;
+      document.getElementById("marcador").innerHTML =
+        `Preguntes respostes: ${respostes} de ${total}`;
+    }
+
+    // Fem globals les funcions per poder-les cridar des d’onclick
+    window.respondre = respondre;
+
+    // Primera pregunta
+    renderitzarPregunta();
+    renderitzarMarcador();
+  </script>
+</body>
+</html>
