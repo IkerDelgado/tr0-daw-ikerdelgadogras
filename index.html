@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inici Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-container, .salut-container {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 40px;
+      min-width: 300px;
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 8px;
+      font-size: 1em;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      width: 80%;
+    }
+    button {
+      padding: 8px 18px;
+      font-size: 1em;
+      border-radius: 4px;
+      border: none;
+      background: #1976d2;
+      color: white;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <script type="module">
+    const main = document.getElementById('main');
+    function renderForm() {
+      main.innerHTML = `<div class='form-container'>
+        <h2>Introdueix el teu nom per començar</h2>
+        <form id='userForm'>
+          <input type='text' id='nomUsuari' placeholder='Nom' required />
+          <br>
+          <button type='submit'>Entrar</button>
+        </form>
+      </div>`;
+      document.getElementById('userForm').onsubmit = function(e) {
+        e.preventDefault();
+        const nom = document.getElementById('nomUsuari').value.trim();
+        if (nom) {
+          localStorage.setItem('nomUsuari', nom);
+          renderSalutacio(nom);
+        }
+      };
+    }
+    function renderSalutacio(nom) {
+      main.innerHTML = `<div class='salut-container'>
+        <h2>Hola, ${nom}!</h2>
+        <p>Benvingut al Quiz de Marcas.</p>
+        <button id='esborrarNom'>Esborrar nom</button>
+        <br><br>
+        <a href='default.html'><button>Començar Quiz</button></a>
+      </div>`;
+      document.getElementById('esborrarNom').onclick = function() {
+        localStorage.removeItem('nomUsuari');
+        renderForm();
+      };
+    }
+    const nomGuardat = localStorage.getItem('nomUsuari');
+    if (nomGuardat) {
+      renderSalutacio(nomGuardat);
+    } else {
+      renderForm();
+    }
+  </script>
+</body>
+</html>

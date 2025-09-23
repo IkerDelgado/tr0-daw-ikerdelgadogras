@@ -297,6 +297,17 @@ export default{
       ],
       "resposta_correcta": 1
     },
+      {
+        "id": 28,
+        "pregunta": "Quina marca de xocolata té un logotip amb una vaca lila?",
+        "respostes": [
+          {"id": 1, "etiqueta": "Milka", "imatge": "https://brandemia.org/sites/default/files/inline/images/new-2000x1127.jpg"},
+          {"id": 2, "etiqueta": "Nestlé", "imatge": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Nestl%C3%A9.svg/1159px-Nestl%C3%A9.svg.png"},
+          {"id": 3, "etiqueta": "Lindt", "imatge": "https://1000logos.net/wp-content/uploads/2020/07/Lindt-Logo.png"},
+          {"id": 4, "etiqueta": "Valor", "imatge": "https://www.revistainforetail.com//vermultimedia.ashx?c=35c789cc07836bd4e7038021dc7995ae&hd=false"}
+        ],
+        "resposta_correcta": 1
+      },
     {
       "id": 29,
       "pregunta": "Quina marca de roba té un cocodril com a logotip?",
