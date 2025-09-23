@@ -1,0 +1,334 @@
+{
+  "preguntes": [
+    {
+      "id": 1,
+      "pregunta": "Quina marca de cotxes utilitza el lema 'Ultimate Driving Machine'?",
+      "respostes": [
+        {"id": 1, "etiqueta": "BMW", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1024px-BMW.svg.png"},
+        {"id": 2, "etiqueta": "Mercedes-Benz", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png"},
+        {"id": 3, "etiqueta": "Audi", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/1024px-Audi-Logo_2016.svg.png"},
+        {"id": 4, "etiqueta": "Lexus", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Lexus-cars-logo-emblem.jpg/1280px-Lexus-cars-logo-emblem.jpg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 2,
+      "pregunta": "Quina marca de tecnologia és coneguda pel seu logotip amb una poma mossegada?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Apple", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png"},
+        {"id": 2, "etiqueta": "Microsoft", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"},
+        {"id": 3, "etiqueta": "Samsung", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1024px-Samsung_Logo.svg.png"},
+        {"id": 4, "etiqueta": "Sony", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_logo.svg/1024px-Sony_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 3,
+      "pregunta": "Quina marca de sabates esportives té un logotip amb una 'swoosh'?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Nike", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1024px-Logo_NIKE.svg.png"},
+        {"id": 2, "etiqueta": "Adidas", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1024px-Adidas_Logo.svg.png"},
+        {"id": 3, "etiqueta": "Puma", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNOhHZ-0c3De3DFuwuosHkDnJRDwhDb-tLdw&s"},
+        {"id": 4, "etiqueta": "Reebok", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Reebok_2019_logo.svg/2560px-Reebok_2019_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 4,
+      "pregunta": "Quina marca de rellotges és coneguda pel seu logotip amb una corona?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Rolex", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Logo_da_Rolex.png/1200px-Logo_da_Rolex.png"},
+        {"id": 2, "etiqueta": "Cartier", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Cartier_logo.svg/1280px-Cartier_logo.svg.png"},
+        {"id": 3, "etiqueta": "Omega", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Omega_Logo.svg/2560px-Omega_Logo.svg.png"},
+        {"id": 4, "etiqueta": "Tag Heuer", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/TAG_Heuer_logo.svg/1181px-TAG_Heuer_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 5,
+      "pregunta": "Quina marca de luxe és coneguda pel seu logotip amb dues 'G' entrellaçades?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Gucci", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWYXZWDLYCXlIGD8swntMMDpt1II9MYlptpw&s"},
+        {"id": 2, "etiqueta": "Louis Vuitton", "imatge": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Louis_Vuitton_LV_logo.png"},
+        {"id": 3, "etiqueta": "Prada", "imatge": "https://cdn.worldvectorlogo.com/logos/prada-5.svg"},
+        {"id": 4, "etiqueta": "Chanel", "imatge": "https://graffica.info/wp-content/uploads/2015/06/00-chanel-logo1.jpg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 6,
+      "pregunta": "Quina marca de cotxes italians té un cavall negre com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Ferrari", "imatge": "https://www.teleadhesivo.com/es/img/asfs181-jpg/folder/products-listado-merchanthover/pegatinas-coches-motos-ferrari-logo.jpg"},
+        {"id": 2, "etiqueta": "Lamborghini", "imatge": "https://i.blogs.es/ea3a4d/10974309_1087071384651814_2377105394985826515_o/1366_2000.jpg"},
+        {"id": 3, "etiqueta": "Maserati", "imatge": "https://i.etsystatic.com/38881100/r/il/45e678/4772970676/il_570xN.4772970676_nus8.jpg"},
+        {"id": 4, "etiqueta": "Alfa Romeo", "imatge": "https://brandemia.org/sites/default/files/sites/default/files/logo_alfa_romeo_antes.jpg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 7,
+      "pregunta": "Quina marca de refrescos té un logotip amb ones blanques i vermelles?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Coca-Cola", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1024px-Coca-Cola_logo.svg.png"},
+        {"id": 2, "etiqueta": "Pepsi", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pepsi_logo_2014.svg/1024px-Pepsi_logo_2014.svg.png"},
+        {"id": 3, "etiqueta": "Dr Pepper", "imatge": "https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Dr_Pepper_modern.svg/1200px-Dr_Pepper_modern.svg.png"},
+        {"id": 4, "etiqueta": "7Up", "imatge": "https://upload.wikimedia.org/wikipedia/commons/a/aa/7_Up_Logo_Pepsi.svg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 8,
+      "pregunta": "Quina marca de begudes energètiques té un toro com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Red Bull", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Logo_of_Red_bull.svg/1024px-Logo_of_Red_bull.svg.png"},
+        {"id": 2, "etiqueta": "Monster", "imatge": "https://www.shutterstock.com/image-vector/monster-energy-green-black-famous-600w-2307822295.jpg"},
+        {"id": 3, "etiqueta": "Rockstar", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Rockstar_drinkbrank_logo.svg/2560px-Rockstar_drinkbrank_logo.svg.png"},
+        {"id": 4, "etiqueta": "Burn", "imatge": "https://upload.wikimedia.org/wikipedia/it/thumb/7/75/Burn_logo.png/1200px-Burn_logo.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 9,
+      "pregunta": "Quina marca de cafè té un logotip amb una sirena?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Starbucks", "imatge": "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/763px-Starbucks_Corporation_Logo_2011.svg.png"},
+        {"id": 2, "etiqueta": "Costa Coffee", "imatge": "https://1000logos.net/wp-content/uploads/2020/10/Costa-Coffee-Logo.png"},
+        {"id": 3, "etiqueta": "Dunkin'", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Dunkin%27_logo.svg/2560px-Dunkin%27_logo.svg.png"},
+        {"id": 4, "etiqueta": "Tim Hortons", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Tim_Hortons_Logo.svg/2560px-Tim_Hortons_Logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 10,
+      "pregunta": "Quina marca de xarxes socials té un ocell blau com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Twitter", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1024px-Logo_of_Twitter.svg.png"},
+        {"id": 2, "etiqueta": "Facebook", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/1024px-2023_Facebook_icon.svg.png"},
+        {"id": 3, "etiqueta": "Instagram", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png"},
+        {"id": 4, "etiqueta": "LinkedIn", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/1024px-LinkedIn_logo_initials.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 11,
+      "pregunta": "Quina marca de menjar ràpid té arcs daurats com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "McDonald's", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1024px-McDonald%27s_Golden_Arches.svg.png"},
+        {"id": 2, "etiqueta": "Burger King", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Burger_King_logo_%281999%E2%80%932020%29.svg/1012px-Burger_King_logo_%281999%E2%80%932020%29.svg.png"},
+        {"id": 3, "etiqueta": "KFC", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/KFC_logo.svg/1024px-KFC_logo.svg.png"},
+        {"id": 4, "etiqueta": "Subway", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Subway_2016_logo.svg/1024px-Subway_2016_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 12,
+      "pregunta": "Quina marca de jocs té un cap de Pac-Man com a logotip històric?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Namco", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Bandai_Namco_Holdings_logo.svg/2560px-Bandai_Namco_Holdings_logo.svg.png"},
+        {"id": 2, "etiqueta": "Nintendo", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Nintendo.svg/1024px-Nintendo.svg.png"},
+        {"id": 3, "etiqueta": "Sony", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_logo.svg/1024px-Sony_logo.svg.png"},
+        {"id": 4, "etiqueta": "Sega", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/SEGA_logo.svg/1200px-SEGA_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 13,
+      "pregunta": "Quina marca de delivery té un cangur com a mascota?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Deliveroo", "imatge": "https://cdn.worldvectorlogo.com/logos/deliveroo-1.svg"},
+        {"id": 2, "etiqueta": "Uber Eats", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Uber_Eats_2018_logo.svg/1280px-Uber_Eats_2018_logo.svg.png"},
+        {"id": 3, "etiqueta": "Just Eat", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeAmQDeCjzMWCDpCZXYs_HKGYE960s4TaAXw&s"},
+        {"id": 4, "etiqueta": "Glovo", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Glovo_Logo.svg/2560px-Glovo_Logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 14,
+      "pregunta": "Quina marca de cotxes té quatre anells entrellaçats?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Audi", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/1024px-Audi-Logo_2016.svg.png"},
+        {"id": 2, "etiqueta": "BMW", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1024px-BMW.svg.png"},
+        {"id": 3, "etiqueta": "Mercedes", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1024px-Mercedes-Logo.svg.png"},
+        {"id": 4, "etiqueta": "Volkswagen", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/1024px-Volkswagen_logo_2019.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 15,
+      "pregunta": "Quina marca de telefonia té un logotip amb la lletra 'T' en magenta?",
+      "respostes": [
+        {"id": 1, "etiqueta": "T-Mobile", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/T-Mobile_logo.svg/2560px-T-Mobile_logo.svg.png"},
+        {"id": 2, "etiqueta": "Vodafone", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Vodafone_Logo.svg/1200px-Vodafone_Logo.svg.png"},
+        {"id": 3, "etiqueta": "Orange", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/1024px-Orange_logo.svg.png"},
+        {"id": 4, "etiqueta": "Movistar", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Logo_Movistar.svg/2560px-Logo_Movistar.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 16,
+      "pregunta": "Quina marca de streaming té una 'N' vermella?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Netflix", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1024px-Netflix_2015_logo.svg.png"},
+        {"id": 2, "etiqueta": "Amazon Prime", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1024px-Amazon_Prime_Video_logo.svg.png"},
+        {"id": 3, "etiqueta": "Disney+", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/1024px-Disney%2B_logo.svg.png"},
+        {"id": 4, "etiqueta": "HBO Max", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/1024px-HBO_Max_Logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 17,
+      "pregunta": "Quina marca de pagament té una 'V' estilitzada?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Visa", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1024px-Visa_Inc._logo.svg.png"},
+        {"id": 2, "etiqueta": "Mastercard", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1024px-MasterCard_Logo.svg.png"},
+        {"id": 3, "etiqueta": "American Express", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1024px-American_Express_logo_%282018%29.svg.png"},
+        {"id": 4, "etiqueta": "PayPal", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1024px-PayPal.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 18,
+      "pregunta": "Quina marca de motors de cerca té colors blau, vermell, groc i verd?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Google", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png"},
+        {"id": 2, "etiqueta": "Bing", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bing_Fluent_Logo.svg/1024px-Bing_Fluent_Logo.svg.png"},
+        {"id": 3, "etiqueta": "Yahoo", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yahoo%21_%282019%29.svg/1024px-Yahoo%21_%282019%29.svg.png"},
+        {"id": 4, "etiqueta": "DuckDuckGo", "imatge": "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 19,
+      "pregunta": "Quina marca de roba esportiva té tres ratlles com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Adidas", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1024px-Adidas_Logo.svg.png"},
+        {"id": 2, "etiqueta": "Nike", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1024px-Logo_NIKE.svg.png"},
+        {"id": 3, "etiqueta": "Puma", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNOhHZ-0c3De3DFuwuosHkDnJRDwhDb-tLdw&s"},
+        {"id": 4, "etiqueta": "Under Armour", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/1024px-Under_armour_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 20,
+      "pregunta": "Quina marca de hotels té un logotip amb una 'H' estilitzada?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Hilton", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXZoo2hapPT1XbYyagzxj2SQBqtKn-TjQojw&s"},
+        {"id": 2, "etiqueta": "Marriott", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBhMiGYiZ0FFu1y85gft-7FnOVIXNlnzQyYQ&s"},
+        {"id": 3, "etiqueta": "Hyatt", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Hyatt_Logo.png/1200px-Hyatt_Logo.png"},
+        {"id": 4, "etiqueta": "Sheraton", "imatge": "https://cdn.worldvectorlogo.com/logos/sheraton-hotels-1.svg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 21,
+      "pregunta": "Quina marca de transport compartit té un logotip amb una 'U'?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Uber", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Uber_logo_2018.png/1024px-Uber_logo_2018.png"},
+        {"id": 2, "etiqueta": "Lyft", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Lyft_logo.svg/1024px-Lyft_logo.svg.png"},
+        {"id": 3, "etiqueta": "Cabify", "imatge": "https://upload.wikimedia.org/wikipedia/commons/5/53/Cabify-Logo-Moradul-RGB.png"},
+        {"id": 4, "etiqueta": "Bolt", "imatge": "https://upload.wikimedia.org/wikipedia/commons/1/17/Bolt_logo.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 22,
+      "pregunta": "Quina marca de cotxes japonesos té un logotip amb tres diamants?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Mitsubishi", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mitsubishi_logo.svg/1024px-Mitsubishi_logo.svg.png"},
+        {"id": 2, "etiqueta": "Toyota", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Toyota.svg/1024px-Toyota.svg.png"},
+        {"id": 3, "etiqueta": "Honda", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Honda_Logo.svg/2000px-Honda_Logo.svg.png"},
+        {"id": 4, "etiqueta": "Nissan", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Nissan_2020_logo.svg/1024px-Nissan_2020_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 23,
+      "pregunta": "Quina marca de gelats té un logotip amb un cor vermell?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Häagen-Dazs", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/H%C3%A4agen-Dazs_Logo.svg/640px-H%C3%A4agen-Dazs_Logo.svg.png"},
+        {"id": 2, "etiqueta": "Ben & Jerry's", "imatge": "https://1000logos.net/wp-content/uploads/2023/11/Ben-and-Jerrys-Logo.png"},
+        {"id": 3, "etiqueta": "Magnum", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Magnum_logo.svg/2560px-Magnum_logo.svg.png"},
+        {"id": 4, "etiqueta": "Cornetto", "imatge": "https://www.brandemia.org/wp-content/uploads/2013/04/logo_cornetto_nuevo.jpg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 24,
+      "pregunta": "Quina marca de supermercat té un logotip amb una fletxa corba?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Amazon", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"},
+        {"id": 2, "etiqueta": "Walmart", "imatge": "https://1000logos.net/wp-content/uploads/2017/05/Walmart-Logo.png"},
+        {"id": 3, "etiqueta": "Target", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/1024px-Target_logo.svg.png"},
+        {"id": 4, "etiqueta": "Carrefour", "imatge": "https://1000logos.net/wp-content/uploads/2020/09/Carrefour-Logo.jpg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 25,
+      "pregunta": "Quina marca de moda té un logotip amb una medusa?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Versace", "imatge": "https://cdn.freebiesupply.com/logos/large/2x/versace-medusa-2-logo-png-transparent.png"},
+        {"id": 2, "etiqueta": "Armani", "imatge": "https://www.shutterstock.com/image-vector/giorgio-armani-icon-logo-symbol-600nw-2425801211.jpg"},
+        {"id": 3, "etiqueta": "Dolce & Gabbana", "imatge": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Dolce_%26_Gabbana.svg"},
+        {"id": 4, "etiqueta": "Valentino", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwwYOsZiyzHc2XwNSaVfueXnSglzyb9MbKw&s"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 26,
+      "pregunta": "Quina marca de pneumàtics té un home fet de pneumàtics com a mascota?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Michelin", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Michelin-logo-blue%402x.webp/678px-Michelin-logo-blue%402x.webp.png"},
+        {"id": 2, "etiqueta": "Bridgestone", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Bridgestone_logo.svg/2560px-Bridgestone_logo.svg.png"},
+        {"id": 3, "etiqueta": "Goodyear", "imatge": "https://d1gl66oyi6i593.cloudfront.net/wp-content/uploads/2018/07/historia-logo-goodyear.jpg"},
+        {"id": 4, "etiqueta": "Continental", "imatge": "https://cdn.worldvectorlogo.com/logos/continental-54.svg"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 27,
+      "pregunta": "Quina marca de videojocs té un logotip amb un triangle, cercle, equis i quadrat?",
+      "respostes": [
+        {"id": 1, "etiqueta": "PlayStation", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_logo.svg/1024px-PlayStation_logo.svg.png"},
+        {"id": 2, "etiqueta": "Xbox", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Xbox_one_logo.svg/1024px-Xbox_one_logo.svg.png"},
+        {"id": 3, "etiqueta": "Nintendo", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Nintendo.svg/1024px-Nintendo.svg.png"},
+        {"id": 4, "etiqueta": "Steam", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1024px-Steam_icon_logo.svg.png"}
+      ],
+      "resposta_correcta": 1
+    },
+      {
+        "id": 28,
+        "pregunta": "Quina marca de xocolata té un logotip amb una vaca lila?",
+        "respostes": [
+          {"id": 1, "etiqueta": "Milka", "imatge": "https://brandemia.org/sites/default/files/inline/images/new-2000x1127.jpg"},
+          {"id": 2, "etiqueta": "Nestlé", "imatge": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Nestl%C3%A9.svg/1159px-Nestl%C3%A9.svg.png"},
+          {"id": 3, "etiqueta": "Lindt", "imatge": "https://1000logos.net/wp-content/uploads/2020/07/Lindt-Logo.png"},
+          {"id": 4, "etiqueta": "Valor", "imatge": "https://www.revistainforetail.com//vermultimedia.ashx?c=35c789cc07836bd4e7038021dc7995ae&hd=false"}
+        ],
+        "resposta_correcta": 1
+      },
+    {
+      "id": 29,
+      "pregunta": "Quina marca de roba té un cocodril com a logotip?",
+      "respostes": [
+        {"id": 1, "etiqueta": "Lacoste", "imatge": "https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/1280px-Lacoste_logo.svg.png"},
+        {"id": 2, "etiqueta": "Ralph Lauren", "imatge": "https://brandemia.org/contenido/subidas/2022/11/marca-ralph-lauren-original-1024x572.png"},
+        {"id": 3, "etiqueta": "Tommy Hilfiger", "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTTw8kPOSsjnMqIciX_VxAR5yd7XmbIF0ZXQ&usqp=CAU"},
+        {"id": 4, "etiqueta": "Fred Perry", "imatge": "https://upload.wikimedia.org/wikipedia/en/a/a9/Fred_Perry_logo.png"}
+      ],
+      "resposta_correcta": 1
+    },
+    {
+      "id": 30,
+      "pregunta": "Quina marca de pastissos té un logotip amb lletres vermelles sobre fons groc?",
+      "respostes": [
+        {"id": 1, "etiqueta": "DHL", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/DHL_Logo.svg/1024px-DHL_Logo.svg.png"},
+        {"id": 2, "etiqueta": "UPS", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/United_Parcel_Service_logo_2014.svg/859px-United_Parcel_Service_logo_2014.svg.png"},
+        {"id": 3, "etiqueta": "FedEx", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/FedEx_Express.svg/1024px-FedEx_Express.svg.png"},
+        {"id": 4, "etiqueta": "TNT", "imatge": "https://upload.wikimedia.org/wikipedia/commons/2/24/TNT_Logo_2016.svg"}
+      ],
+      "resposta_correcta": 1
+    }
+  ]
+}

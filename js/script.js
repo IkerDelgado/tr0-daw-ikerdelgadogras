@@ -1,5 +1,3 @@
-
-
 // Estado de la partida
 let estatDeLaPartida = {
   contadorPreguntes: 0,
@@ -15,7 +13,6 @@ let quizFinalizado = false;
 let timeLeft = 30;
 let interval;
 let current = 0;
-
 
 function renderitzarMarcador() {
   marcador.textContent = '';
@@ -94,11 +91,9 @@ function iniciarQuiz(preguntasData) {
 }
 
 // Carga de datos asíncrona
-fetch('js/data.js')
-  .then(response => response.text())
-  .then(text => {
-    const jsonText = text.replace(/export default/, '').trim();
-    const data = eval('(' + jsonText + ')');
+fetch('api/get_questions.php')
+  .then(response => response.json())
+  .then(data => {
     const preguntasAleatorias = data.preguntes.sort(() => Math.random() - 0.5);
     iniciarQuiz(preguntasAleatorias);
   });
@@ -111,13 +106,23 @@ container.addEventListener('click', function(event) {
   if (estatDeLaPartida.respostesUsuari[current]) return;
   const respostaId = parseInt(target.getAttribute('data-resposta'));
   const pregunta = preguntas[current];
-  const correcta = respostaId === pregunta.resposta_correcta;
-  estatDeLaPartida.respostesUsuari[current] = { respostaId, correcta };
-  estatDeLaPartida.contadorPreguntes = estatDeLaPartida.respostesUsuari.filter(r => r !== null).length;
-  renderitzarMarcador();
-  target.classList.add('resposta-seleccionada');
-  setTimeout(() => {
-    current++;
-    mostrarPregunta(current);
-  }, 500);
+
+  // Comprobar la respuesta en el backend
+  fetch('api/check_answer.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: pregunta.id, resposta: respostaId })
+  })
+    .then(response => response.json())
+    .then(result => {
+      const correcta = result.correcta === true;
+      estatDeLaPartida.respostesUsuari[current] = { respostaId, correcta };
+      estatDeLaPartida.contadorPreguntes = estatDeLaPartida.respostesUsuari.filter(r => r !== null).length;
+      renderitzarMarcador();
+      target.classList.add('resposta-seleccionada');
+      setTimeout(() => {
+        current++;
+        mostrarPregunta(current);
+      }, 500);
+    });
 });
