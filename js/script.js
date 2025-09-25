@@ -52,15 +52,27 @@ function mostrarPregunta(idx) {
 
 function mostrarResultado() {
   timerDiv.textContent = '';
-  // Historial solo de preguntas respondidas
+  // Historial detallado de respuestas
   const respondidas = estatDeLaPartida.respostesUsuari.filter(r => r !== null).length;
-  const historial = estatDeLaPartida.respostesUsuari
-    .filter(r => r !== null)
-    .map(r => r.correcta ? 'X' : '0')
-    .join(', ');
+  let historialHtml = '<ul style="list-style:none;padding:0;">';
+  estatDeLaPartida.respostesUsuari.forEach((r, idx) => {
+    if (r === null) return;
+    const pregunta = preguntas[idx];
+    const respuesta = pregunta.respostes.find(res => res.id === r.respostaId);
+    historialHtml += `<li style="margin-bottom:6px;">Pregunta ${idx+1}: <b>${pregunta.pregunta}</b><br>
+      Tu respuesta: <span style="color:${r.correcta ? 'green' : 'red'};font-weight:bold;">$}</span> ${r.correcta ? '✔️' : '❌'}</li>`;
+  });
+  historialHtml += '</ul>';
   container.innerHTML = `<div class='pregunta'><h2>¡Tiempo terminado!</h2>
     <p>Preguntes respostes: ${respondidas} de ${estatDeLaPartida.totalPreguntes}</p>
-    <p>Historial: [${historial}]</p></div>`;
+    <h3>Historial:</h3>
+    ${historialHtml}
+    <button id="reiniciar-btn" style="margin-top:16px;padding:8px 18px;background:#1976d2;color:#fff;border:none;border-radius:5px;cursor:pointer;">Volver a jugar</button>
+  </div>`;
+  document.getElementById('reiniciar-btn').onclick = function() {
+    localStorage.clear();
+    window.location.href = '../index.html';
+  };
 }
 
 function iniciarQuiz(preguntasData) {

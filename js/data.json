@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "pregunta": "Quina marca de tecnologia és coneguda pel seu logotip amb una poma mossegada?",
+      "pregunta": "Quina marca de tecn'ologia és coneguda pel seu logotip amb una poma mossegada?",
       "respostes": [
         {"id": 1, "etiqueta": "Apple", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png"},
         {"id": 2, "etiqueta": "Microsoft", "imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"},

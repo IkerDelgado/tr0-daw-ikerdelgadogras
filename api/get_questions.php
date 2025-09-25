@@ -1,9 +1,17 @@
 <?php
-// Devuelve las preguntas sin la respuesta correcta
+require_once 'db.php';
 header('Content-Type: application/json');
-$json = file_get_contents(__DIR__ . '/../js/data.json');
-$data = json_decode($json, true);
-foreach ($data['preguntes'] as &$pregunta) {
-    unset($pregunta['resposta_correcta']);
+$preguntas = [];
+$sql = "SELECT * FROM preguntes";
+$result = $conn->query($sql);
+while ($row = $result->fetch_assoc()) {
+    $row['respostes'] = [];
+    $sql2 = "SELECT id, etiqueta, imatge, correcta FROM respostes WHERE pregunta_id = " . $row['id'];
+    $result2 = $conn->query($sql2);
+    while ($r = $result2->fetch_assoc()) {
+        $row['respostes'][] = $r;
+    }
+    $preguntas[] = $row;
 }
-echo json_encode($data);
+echo json_encode(['preguntes' => $preguntas]);
+?>
