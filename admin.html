@@ -23,11 +23,11 @@
   <h2>Crear nova pregunta</h2>
   <form id="form-nova-pregunta">
     <input type="text" id="nova-pregunta" placeholder="Pregunta" required style="width:60%">
-    <div id="respostes-noves" class="resposta-list"></div>
-    <button type="button" class="add-btn" id="afegir-resposta">Afegir resposta</button>
-    <br><br>
-    <button type="submit" class="add-btn">Crear pregunta</button>
+    <br>
+    <button type="button" class="add-btn" id="crear-pregunta-btn">Crear pregunta</button>
   </form>
+  <div id="error-msg" style="color:red;margin-top:10px;"></div>
+  
   <script>
     // --- Helpers ---
     function fetchPreguntes() {
@@ -35,6 +35,7 @@
         .then(r => r.json())
         .then(data => renderPreguntes(data.preguntes));
     }
+    
     function renderPreguntes(preguntes) {
       const div = document.getElementById('preguntes');
       div.innerHTML = '';
@@ -59,46 +60,115 @@
         div.appendChild(card);
       });
     }
+    
     // --- Crear pregunta ---
-    let respostesNoves = [];
-    function renderRespostesNoves() {
-      const cont = document.getElementById('respostes-noves');
-      cont.innerHTML = '';
-      respostesNoves.forEach((r, i) => {
-        cont.innerHTML += `<div class='resposta-item'>
-          <input type='text' placeholder='Etiqueta' value='${r.etiqueta || ''}' onchange='updateEtiqueta(${i}, this.value)'>
-          <input type='text' placeholder='Imatge URL' value='${r.imatge || ''}' onchange='updateImatge(${i}, this.value)'>
-          <label><input type='radio' name='correcta' ${r.correcta ? 'checked' : ''} onchange='setCorrecta(${i})'> Correcta</label>
-          <button type='button' onclick='removeResposta(${i})'>X</button>
-        </div>`;
-      });
-    }
-    window.updateEtiqueta = function(i, val) { respostesNoves[i].etiqueta = val; }
-    window.updateImatge = function(i, val) { respostesNoves[i].imatge = val; }
-    window.setCorrecta = function(i) { respostesNoves.forEach((r, idx) => r.correcta = idx === i); renderRespostesNoves(); }
-    window.removeResposta = function(i) { respostesNoves.splice(i, 1); renderRespostesNoves(); }
-    document.getElementById('afegir-resposta').onclick = function() {
-      respostesNoves.push({ etiqueta: '', imatge: '', correcta: false });
-      renderRespostesNoves();
-    };
-    document.getElementById('form-nova-pregunta').onsubmit = function(e) {
-      e.preventDefault();
+    document.getElementById('crear-pregunta-btn').onclick = function() {
+      document.getElementById('error-msg').textContent = '';
       const pregunta = document.getElementById('nova-pregunta').value.trim();
-      if (!pregunta || respostesNoves.length < 2 || !respostesNoves.some(r => r.correcta)) {
-        alert('Completa la pregunta y al menos dos respuestas, marcando una como correcta.');
+      if (!pregunta) {
+        document.getElementById('error-msg').textContent = 'Escribe la pregunta antes de continuar.';
         return;
       }
-      fetch('api/create_question.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pregunta, respostes: respostesNoves })
-      }).then(r => r.json()).then(() => {
-        document.getElementById('nova-pregunta').value = '';
-        respostesNoves = [];
-        renderRespostesNoves();
-        fetchPreguntes();
-      });
+      
+      let modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.background = 'rgba(0,0,0,0.3)';
+      modal.style.zIndex = '9999';
+      
+      let modalHtml = `<div style='background:#fff;padding:24px;border-radius:8px;max-width:500px;margin:60px auto;'>
+        <h3>Introduce las 4 respuestas</h3>
+        <form id='modal-form'>`;
+      
+      for (let i = 0; i < 4; i++) {
+        modalHtml += `<div class='resposta-item' style='margin-bottom:10px;'>
+          <input type='text' id='modal-etiqueta-${i}' placeholder='Etiqueta' style='margin-right:10px;'>
+          <input type='file' id='modal-imatge-${i}' accept='image/*' style='margin-right:10px;'>
+          <label><input type='radio' name='modal-correcta' value='${i}' id='modal-correcta-${i}'> Correcta</label>
+        </div>`;
+      }
+      
+      modalHtml += `<br><button type='submit' class='add-btn'>Guardar</button>
+        <button type='button' id='cancelar-modal' class='add-btn' style='background:#aaa;'>Cancelar</button>
+        <div id='modal-error' style='color:red;margin-top:10px;'></div>
+        </form></div>`;
+      
+      modal.innerHTML = modalHtml;
+      document.body.appendChild(modal);
+      
+      document.getElementById('cancelar-modal').onclick = function() {
+        document.body.removeChild(modal);
+      };
+      
+      document.getElementById('modal-form').onsubmit = function(e) {
+        e.preventDefault();
+        
+        // Verificar que hay una respuesta correcta seleccionada
+        const radioSeleccionado = document.querySelector('input[name="modal-correcta"]:checked');
+        if (!radioSeleccionado) {
+          document.getElementById('modal-error').textContent = 'Marca una respuesta como correcta.';
+          return;
+        }
+        
+        const correctaIndex = parseInt(radioSeleccionado.value);
+        
+        // Verificar que todas las etiquetas están completas
+        let todasCompletas = true;
+        for (let i = 0; i < 4; i++) {
+          let etiqueta = document.getElementById('modal-etiqueta-' + i).value.trim();
+          if (!etiqueta) {
+            todasCompletas = false;
+            break;
+          }
+        }
+        
+        if (!todasCompletas) {
+          document.getElementById('modal-error').textContent = 'Completa las 4 etiquetas.';
+          return;
+        }
+        
+        // Construir FormData correctamente
+        const formData = new FormData();
+        formData.append('pregunta', pregunta);
+        
+        for (let i = 0; i < 4; i++) {
+          let etiqueta = document.getElementById('modal-etiqueta-' + i).value.trim();
+          let imatgeFile = document.getElementById('modal-imatge-' + i).files[0];
+          let correcta = (i === correctaIndex) ? 1 : 0;
+          
+          // Importante: usar esta estructura para que PHP pueda leer los datos correctamente
+          formData.append(`respostes[${i}][etiqueta]`, etiqueta);
+          formData.append(`respostes[${i}][correcta]`, correcta);
+          if (imatgeFile) {
+            formData.append(`respostes[${i}][imatge]`, imatgeFile);
+          } else {
+            formData.append(`respostes[${i}][imatge]`, '');
+          }
+        }
+        
+        fetch('api/create_question.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(r => r.json())
+        .then((data) => {
+          if (!data.success) {
+            document.getElementById('modal-error').textContent = data.error || 'Error desconocido.';
+            return;
+          }
+          document.getElementById('nova-pregunta').value = '';
+          document.body.removeChild(modal);
+          fetchPreguntes();
+        })
+        .catch(error => {
+          document.getElementById('modal-error').textContent = 'Error de conexión: ' + error.message;
+        });
+      };
     };
+    
     // --- Eliminar pregunta ---
     window.deletePregunta = function(id) {
       if (!confirm('¿Seguro que quieres eliminar esta pregunta?')) return;
@@ -108,6 +178,7 @@
         body: JSON.stringify({ id })
       }).then(r => r.json()).then(() => fetchPreguntes());
     };
+    
     // --- Editar pregunta (modal simple) ---
     window.editPregunta = function(id) {
       fetch('api/get_questions.php')
@@ -117,6 +188,7 @@
           if (!p) return;
           const nuevaPregunta = prompt('Edita la pregunta:', p.pregunta);
           if (nuevaPregunta === null) return;
+          
           // Editar respuestas
           let nuevasRespuestas = JSON.parse(JSON.stringify(p.respostes));
           let editHtml = 'Edita las respuestas (marca la correcta):<br>';
@@ -127,6 +199,7 @@
               <label><input type='radio' name='edit-correcta' ${r.correcta == 1 ? 'checked' : ''} onclick='window.setEditCorrecta(${i})'> Correcta</label>
             </div>`;
           });
+          
           const modal = document.createElement('div');
           modal.style.position = 'fixed';
           modal.style.top = '0';
@@ -142,16 +215,20 @@
             <br><button id='guardar-edit' class='add-btn'>Guardar</button>
             <button id='cancelar-edit' class='add-btn' style='background:#aaa;'>Cancelar</button>
           </div>`;
+          
           document.body.appendChild(modal);
+          
           window.setEditCorrecta = function(idx) {
             nuevasRespuestas.forEach((r, i) => r.correcta = i === idx ? 1 : 0);
           };
+          
           document.getElementById('guardar-edit').onclick = function() {
             const preguntaEditada = document.getElementById('modal-pregunta').value;
             nuevasRespuestas.forEach((r, i) => {
               r.etiqueta = document.getElementById('edit-etiqueta-' + i).value;
               r.imatge = document.getElementById('edit-imatge-' + i).value;
             });
+            
             fetch('api/update_question.php', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -161,13 +238,14 @@
               fetchPreguntes();
             });
           };
+          
           document.getElementById('cancelar-edit').onclick = function() {
             document.body.removeChild(modal);
           };
         });
     };
+    
     // Inicializar
-    renderRespostesNoves();
     fetchPreguntes();
   </script>
 </body>
