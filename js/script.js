@@ -20,11 +20,12 @@ function renderitzarMarcador() {
 
 function mostrarPregunta(idx) {
   container.innerHTML = '';
-  timerDiv.textContent = `Tiempo restante: ${timeLeft}s`;
   if (idx >= preguntas.length || quizFinalizado) {
     mostrarResultado();
+    timerDiv.textContent = '';
     return;
   }
+  timerDiv.textContent = `Temps restant: ${timeLeft}s`;
   const pregunta = preguntas[idx];
   const preguntaDiv = document.createElement('div');
   preguntaDiv.classList.add('pregunta');
@@ -53,21 +54,21 @@ function mostrarPregunta(idx) {
 function mostrarResultado() {
   timerDiv.textContent = '';
   // Historial detallado de respuestas
-  const respondidas = estatDeLaPartida.respostesUsuari.filter(r => r !== null).length;
+  const respostesContestades = estatDeLaPartida.respostesUsuari.filter(r => r !== null).length;
   let historialHtml = '<ul style="list-style:none;padding:0;">';
   estatDeLaPartida.respostesUsuari.forEach((r, idx) => {
     if (r === null) return;
     const pregunta = preguntas[idx];
-    const respuesta = pregunta.respostes.find(res => res.id === r.respostaId);
+    const resposta = pregunta.respostes.find(res => res.id === r.respostaId);
     historialHtml += `<li style="margin-bottom:6px;">Pregunta ${idx+1}: <b>${pregunta.pregunta}</b><br>
-      Tu respuesta: <span style="color:${r.correcta ? 'green' : 'red'};font-weight:bold;">$}</span> ${r.correcta ? '✔️' : '❌'}</li>`;
+      La teva resposta: <span style="color:${r.correcta ? 'green' : 'red'};font-weight:bold;">${resposta ? resposta.etiqueta : ''}</span> ${r.correcta ? '✔️' : '❌'}</li>`;
   });
   historialHtml += '</ul>';
-  container.innerHTML = `<div class='pregunta'><h2>¡Tiempo terminado!</h2>
-    <p>Preguntes respostes: ${respondidas} de ${estatDeLaPartida.totalPreguntes}</p>
+  container.innerHTML = `<div class='pregunta'><h2>Temps acabat!</h2>
+    <p>Preguntes contestades: ${respostesContestades} de ${estatDeLaPartida.totalPreguntes}</p>
     <h3>Historial:</h3>
     ${historialHtml}
-    <button id="reiniciar-btn" style="margin-top:16px;padding:8px 18px;background:#1976d2;color:#fff;border:none;border-radius:5px;cursor:pointer;">Volver a jugar</button>
+    <button id="reiniciar-btn" style="margin-top:16px;padding:8px 18px;background:#1976d2;color:#fff;border:none;border-radius:5px;cursor:pointer;">Tornar a jugar</button>
   </div>`;
   document.getElementById('reiniciar-btn').onclick = function() {
     localStorage.clear();
@@ -85,10 +86,15 @@ function iniciarQuiz(preguntasData) {
   current = 0;
   renderitzarMarcador();
   mostrarPregunta(current);
-  timerDiv.textContent = `Tiempo restante: ${timeLeft}s`;
+  timerDiv.textContent = `Temps restant: ${timeLeft}s`;
   interval = setInterval(() => {
+    if (quizFinalizado) {
+      clearInterval(interval);
+      timerDiv.textContent = '';
+      return;
+    }
     timeLeft--;
-    timerDiv.textContent = `Tiempo restante: ${timeLeft}s`;
+    timerDiv.textContent = `Temps restant: ${timeLeft}s`;
     if (timeLeft <= 0) {
       clearInterval(interval);
       quizFinalizado = true;
