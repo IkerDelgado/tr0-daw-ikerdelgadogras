@@ -6,59 +6,115 @@
   <title>Quiz de Marques</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
+    body {
+      background: linear-gradient(135deg, #e3f0ff 0%, #f8f8ff 100%);
+      min-height: 100vh;
+    }
+    .quiz-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .quiz-header .bi {
+      font-size: 2.2em;
+      color: #1976d2;
+      filter: drop-shadow(0 2px 2px #b3c6e0);
+    }
     .pregunta {
       background: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 22px 18px;
+      margin-bottom: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(25, 118, 210, 0.10);
+      border: 1px solid #e3eafc;
+      transition: box-shadow 0.2s;
+    }
+    .pregunta h3 {
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 12px;
     }
     .respostes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 18px;
       margin-top: 10px;
     }
     .resposta {
       display: flex;
       align-items: center;
-      background: #fafafa;
-      border-radius: 6px;
-      padding: 8px;
+      background: #f4f8ff;
+      border-radius: 10px;
+      padding: 12px 10px;
       cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
+      border: 1px solid #e3eafc;
+      font-size: 1.08em;
     }
     .resposta:hover {
-      background: #efefef;
+      background: #e3f0ff;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.13);
+      transform: scale(1.03);
+    }
+    .resposta-seleccionada {
+      background: #d1eaff !important;
+      border: 2px solid #1976d2 !important;
+      box-shadow: 0 2px 12px rgba(25, 118, 210, 0.18);
+      font-weight: 600;
+      color: #1976d2;
     }
     .resposta img {
-      width: 48px;
-      height: 48px;
+      width: 54px;
+      height: 54px;
       object-fit: contain;
-      margin-right: 12px;
+      margin-right: 16px;
       background: #fff;
-      border-radius: 4px;
-      border: 1px solid #eee;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      border-radius: 6px;
+      border: 1px solid #e3eafc;
+      box-shadow: 0 1px 2px rgba(25, 118, 210, 0.07);
+      transition: box-shadow 0.18s;
+    }
+    .btn-quiz {
+      font-size: 1.1em;
+      padding: 10px 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+      font-weight: 500;
+    }
+    #timer {
+      font-size: 1.25em;
+      color: #1976d2;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    #marcador {
+      font-size: 1.08em;
+      color: #333;
+      margin-bottom: 12px;
     }
     @media (max-width: 600px) {
       .pregunta {
-        padding: 8px;
+        padding: 10px 6px;
         margin-bottom: 12px;
+        border-radius: 10px;
       }
       .respostes-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 10px;
       }
       .resposta {
-        padding: 6px;
-        font-size: 0.95em;
+        padding: 7px 6px;
+        font-size: 0.98em;
       }
       .resposta img {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         margin-right: 8px;
       }
       h1 {
@@ -72,9 +128,12 @@
 </head>
 <body>
   <div class="container py-4">
-    <h1 class="mb-4 text-center text-break">Quiz de Marques</h1>
-    <div id="timer" class="mb-2 fw-bold text-primary text-center" style="font-size:1.2em;"></div>
-    <div id="marcador" class="mb-3 text-center" style="font-size:1.1em;"></div>
+    <div class="quiz-header mb-4">
+      <i class="bi bi-question-circle"></i>
+      <h1 class="mb-0 text-break" style="font-weight:700; color:#1976d2;">Quiz de Marques</h1>
+    </div>
+    <div id="timer" class="mb-2 fw-bold text-primary text-center"></div>
+    <div id="marcador" class="mb-3 text-center"></div>
     <div id="quiz-container" class="w-100"></div>
   </div>
   <style>
